@@ -11,10 +11,11 @@ class Solution {
             pq.offer(i); //우선순위 큐에 스코빌 삽입 
         
         while(pq.peek() < K){
+            if( pq.size() ==1 )
+                return -1; //얼리리턴
             pq.offer(pq.poll() + pq.poll()*2); 
             answer++;
-            if( pq.peek() < K && pq.size() ==1 )
-                return -1; //얼리리턴
+            
         }
         
         return answer;
