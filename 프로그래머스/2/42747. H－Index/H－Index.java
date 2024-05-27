@@ -1,26 +1,26 @@
 import java.util.*;
 
+
+
 class Solution {
     public int solution(int[] citations) {
         int answer = 0;
         
-        
-        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder()); //최대힙선언
 
         for(int citation : citations)
             pq.add(citation);
         
-        int cnt= 0; //h번 이상 인용된 논문 개수 
+        int h= 0; //h번 이상 인용된 논문 개수를 센다.  
+        //  n>=h이다. 
         
-        int preCit=pq.peek(); 
-        while(cnt < pq.peek() ){
-            preCit = pq.poll(); // 탑반환 
-            cnt++;
-            if(pq.size()==0)
-                return cnt;
+        while(h < pq.peek() ){ //h가 힙의 루트 노트보다 작은 동안
+            pq.poll(); // 루트 노트 삭제 
+            h++;
+            if(pq.size()==0) // 힙이 사이즈가 0일때, 런타임 에러 방지
+                return h;
         }
         
-        
-        return cnt;
+        return h;
     }
 }
