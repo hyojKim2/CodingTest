@@ -7,10 +7,8 @@ class Solution {
         
         int s_length= s.length();
 
-        if(s_length==1)
-            return 1;
         ArrayList<Integer> numbers=new ArrayList<>(); //길이를 저장
-        for (int i=s_length/2 ; i >0 ;i--){
+        for (int i=s_length ; i >0 ;i--){
 
             
             String recentString =s.substring(0, i); //이전에 자른 substring
