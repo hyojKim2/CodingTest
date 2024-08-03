@@ -16,6 +16,7 @@ class Solution {
             
             
             if (entryPeople >= n) {
+                System.out.println(entryPeople);
                 answer = mid;
                 right = mid - 1;
             } else {
