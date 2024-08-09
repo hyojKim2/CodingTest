@@ -15,9 +15,6 @@ class Solution {
             바꿔야할 문자들을, 최소로 접근할 수 있는 방법을 알아야할 것 같다.
             시작문자~keyIdx[0] 최소거리와 시작문자~keyIdx[1] 최소거리 중 작은 것을 a, 큰 것을 b라할때,  
             min(a*2 + b > lastIdx )
-            ex)
-            10000001 -> 1 vs 7 ->lastIdx인 7
-            01001000 -> 6 vs 4 ->a*2+ b인 6
          */
 
         for(int i=0;i<name.length();i++){
